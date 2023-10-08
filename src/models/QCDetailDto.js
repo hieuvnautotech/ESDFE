@@ -1,0 +1,30 @@
+import moment from 'moment';
+const QCDetailDto = {
+  QCDetailTextId: 0,
+  QCDetailValueId: 0,
+  QCMasterId: 0,
+  QCTypeId: null,
+  QCItemId: null,
+  QCItemIdName: '',
+  QCStandardId: null,
+  QCToolId: null,
+  QCItemType: '',
+  QCValue: 0,
+  CheckValue1: null,
+  ToleranceUp1: null,
+  ToleranceDown1: null,
+  // CheckValue1: '',
+  // ToleranceUp1: '',
+  // ToleranceDown1: '',
+  // CheckValue2: '',
+  // CheckValue3: '',
+  // CheckValue4: '',
+  isActived: true,
+  createdBy: null,
+  createdDate: moment(),
+  modifiedDate: moment(),
+  modifiedBy: null,
+  row_version: null,
+};
+
+export default QCDetailDto;
