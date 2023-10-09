@@ -89,5 +89,6 @@
   "menu.FQCShipping":"Shipping",
   "menu.OQC": "OQC",
   "menu.status": "Check Status",
-  "menu.SplitSize": "Split Size"
+  "menu.SplitSize": "Split Size",
+  "menu.hieuTest": "hieuTest"
 }
