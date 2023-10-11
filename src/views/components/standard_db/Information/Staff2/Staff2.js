@@ -186,90 +186,90 @@ const Staff2 = (props) => {
       },
     },
     {
-      field: 'BuyerCode',
+      field: 'StaffCode',
       headerName: intl.formatMessage({ id: 'buyer.BuyerCode' }),
       width: 150,
     },
     {
-      field: 'BuyerName',
+      field: 'StaffName',
       headerName: intl.formatMessage({ id: 'buyer.BuyerName' }),
       width: 250,
     },
-    {
-      field: 'BrandName',
-      headerName: intl.formatMessage({ id: 'buyer.BrandName' }),
-      width: 200,
-    },
-    {
-      field: 'Website',
-      headerName: intl.formatMessage({ id: 'buyer.Website' }),
-      width: 200,
-    },
-    {
-      field: 'PhoneNumber',
-      headerName: intl.formatMessage({ id: 'buyer.PhoneNumber' }),
-      width: 150,
-    },
-    {
-      field: 'Email',
-      headerName: intl.formatMessage({ id: 'buyer.Email' }),
-      width: 200,
-    },
-    {
-      field: 'Fax',
-      headerName: intl.formatMessage({ id: 'buyer.Fax' }),
-      width: 130,
-    },
-    {
-      field: 'Tax',
-      headerName: intl.formatMessage({ id: 'buyer.Tax' }),
-      width: 130,
-    },
-    {
-      field: 'Address',
-      headerName: intl.formatMessage({ id: 'buyer.Address' }),
-      width: 250,
-    },
-    {
-      field: 'DateSignContract',
-      headerName: intl.formatMessage({ id: 'buyer.DateSignContract' }),
-      width: 150,
-      valueFormatter: (params) => (params?.value ? moment(params?.value).format('YYYY-MM-DD') : null),
-    },
-    {
-      field: 'Description',
-      headerName: intl.formatMessage({ id: 'buyer.Description' }),
-      width: 250,
-      renderCell: (params) => {
-        return (
-          <Tooltip title={params.row.Description ?? ''} className="col-text-elip">
-            <Typography sx={{ fontSize: 14, maxWidth: 1500 }}>{params.row.Description}</Typography>
-          </Tooltip>
-        );
-      },
-    },
-    { field: 'createdName', headerName: 'User Create', width: 150 },
-    {
-      field: 'createdDate',
-      headerName: intl.formatMessage({ id: 'general.created_date' }),
-      width: 150,
-      valueFormatter: (params) => {
-        if (params.value !== null) {
-          return moment(params?.value).format('YYYY-MM-DD HH:mm:ss');
-        }
-      },
-    },
-    { field: 'modifiedName', headerName: 'User Update', width: 150 },
-    {
-      field: 'modifiedDate',
-      headerName: intl.formatMessage({ id: 'general.modified_date' }),
-      width: 150,
-      valueFormatter: (params) => {
-        if (params.value !== null) {
-          return moment(params?.value).format('YYYY-MM-DD HH:mm:ss');
-        }
-      },
-    },
+    // {
+    //   field: 'BrandName',
+    //   headerName: intl.formatMessage({ id: 'buyer.BrandName' }),
+    //   width: 200,
+    // },
+    // {
+    //   field: 'Website',
+    //   headerName: intl.formatMessage({ id: 'buyer.Website' }),
+    //   width: 200,
+    // },
+    // {
+    //   field: 'PhoneNumber',
+    //   headerName: intl.formatMessage({ id: 'buyer.PhoneNumber' }),
+    //   width: 150,
+    // },
+    // {
+    //   field: 'Email',
+    //   headerName: intl.formatMessage({ id: 'buyer.Email' }),
+    //   width: 200,
+    // },
+    // {
+    //   field: 'Fax',
+    //   headerName: intl.formatMessage({ id: 'buyer.Fax' }),
+    //   width: 130,
+    // },
+    // {
+    //   field: 'Tax',
+    //   headerName: intl.formatMessage({ id: 'buyer.Tax' }),
+    //   width: 130,
+    // },
+    // {
+    //   field: 'Address',
+    //   headerName: intl.formatMessage({ id: 'buyer.Address' }),
+    //   width: 250,
+    // },
+    // {
+    //   field: 'DateSignContract',
+    //   headerName: intl.formatMessage({ id: 'buyer.DateSignContract' }),
+    //   width: 150,
+    //   valueFormatter: (params) => (params?.value ? moment(params?.value).format('YYYY-MM-DD') : null),
+    // },
+    // {
+    //   field: 'Description',
+    //   headerName: intl.formatMessage({ id: 'buyer.Description' }),
+    //   width: 250,
+    //   renderCell: (params) => {
+    //     return (
+    //       <Tooltip title={params.row.Description ?? ''} className="col-text-elip">
+    //         <Typography sx={{ fontSize: 14, maxWidth: 1500 }}>{params.row.Description}</Typography>
+    //       </Tooltip>
+    //     );
+    //   },
+    // },
+    // { field: 'createdName', headerName: 'User Create', width: 150 },
+    // {
+    //   field: 'createdDate',
+    //   headerName: intl.formatMessage({ id: 'general.created_date' }),
+    //   width: 150,
+    //   valueFormatter: (params) => {
+    //     if (params.value !== null) {
+    //       return moment(params?.value).format('YYYY-MM-DD HH:mm:ss');
+    //     }
+    //   },
+    // },
+    // { field: 'modifiedName', headerName: 'User Update', width: 150 },
+    // {
+    //   field: 'modifiedDate',
+    //   headerName: intl.formatMessage({ id: 'general.modified_date' }),
+    //   width: 150,
+    //   valueFormatter: (params) => {
+    //     if (params.value !== null) {
+    //       return moment(params?.value).format('YYYY-MM-DD HH:mm:ss');
+    //     }
+    //   },
+    // },
   ];
 
   return (
