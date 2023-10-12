@@ -33,6 +33,7 @@ import Blade from './standard_db/Information/Blade/Blade';
 import Location from './standard_db/Information/Location/Location';
 import Routing from './standard_db/Information/Routing/Routing';
 import Staff2 from './standard_db/Information/Staff2/Staff2';
+import Buyer2 from './standard_db/Information/Buyer2/Buyer2';
 
 // WMS - Material
 import IQCReceiving from './WMS/Material/IQCReceiving/IQCReceiving';
@@ -142,6 +143,7 @@ export {
   MaterialReturn,
   SplitMergeMaterial,
   Staff2,
+  Buyer2,
   //QMS
   StandardQC,
   QCMaster,
