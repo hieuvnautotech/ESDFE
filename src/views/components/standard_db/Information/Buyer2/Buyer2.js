@@ -7,7 +7,7 @@ import UndoIcon from '@mui/icons-material/Undo';
 import { FormControlLabel, Switch, Tooltip, Typography } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import IconButton from '@mui/material/IconButton';
-import { buyerService } from '@services';
+import { buyer2Service } from '@services';
 import { ErrorAlert, SuccessAlert } from '@utils';
 import _ from 'lodash';
 import moment from 'moment';
@@ -35,24 +35,11 @@ const Buyer2 = (props) => {
     },
   });
 
-  const handleAdd = () => {
-    setMode(CREATE_ACTION);
-    setRowData();
-    toggle();
-  };
+  
 
-  const handleUpdate = async (row) => {
-    setMode(UPDATE_ACTION);
-    setRowData(row);
-    toggle();
-  };
+  
 
-  const changeSearchData = (e, inputName) => {
-    let newSearchData = { ...buyerState.searchData };
-    newSearchData[inputName] = e.target.value;
-
-    setbuyerState({ ...buyerState, searchData: { ...newSearchData } });
-  };
+  
 
   async function fetchData() {
     setbuyerState({
@@ -67,7 +54,7 @@ const Buyer2 = (props) => {
       isActived: showActivedData,
     };
 
-    const res = await buyerService.getBuyerList(params);
+    const res = await buyer2Service.getBuyerList(params);
 
     if (res && isRendered)
       setbuyerState({
@@ -78,37 +65,9 @@ const Buyer2 = (props) => {
       });
   }
 
-  const handleDeleteBuyer = async (buyer) => {
-    if (
-      window.confirm(
-        intl.formatMessage({
-          id: showActivedData ? 'general.confirm_delete' : 'general.confirm_redo_deleted',
-        })
-      )
-    ) {
-      try {
-        let res = await buyerService.deleteBuyer(buyer);
-        if (res && res.HttpResponseCode === 200) {
-          SuccessAlert(intl.formatMessage({ id: 'general.success' }));
-          await fetchData();
-        } else {
-          ErrorAlert(intl.formatMessage({ id: res.ResponseMessage }));
-        }
-      } catch (error) {
-        console.log(error);
-      }
-    }
-  };
+  
 
-  const handleshowActivedData = async (event) => {
-    setShowActivedData(event.target.checked);
-    if (!event.target.checked) {
-      setbuyerState({
-        ...buyerState,
-        page: 1,
-      });
-    }
-  };
+  
 
   useEffect(() => {
     isRendered = true;
@@ -279,36 +238,15 @@ const Buyer2 = (props) => {
           {/* <MuiButton text="create" color="success" onClick={handleAdd} /> */}
         </Grid>
 
-        <Grid item xs>
-          <MuiSearchField
-            label="general.code"
-            name="BuyerCode"
-            onClick={fetchData}
-            onChange={(e) => changeSearchData(e, 'BuyerCode')}
-          />
-        </Grid>
+        
 
-        <Grid item xs>
-          <MuiSearchField
-            label="general.name"
-            name="BuyerName"
-            onClick={fetchData}
-            onChange={(e) => changeSearchData(e, 'BuyerName')}
-          />
-        </Grid>
+        
 
-        <Grid item xs sx={{ display: 'flex', justifyContent: 'right' }}>
-          <MuiButton text="search" color="info" onClick={fetchData} />
-          <FormControlLabel
-            sx={{ mb: 0, ml: '1px' }}
-            control={<Switch defaultChecked={true} color="primary" onChange={(e) => handleshowActivedData(e)} />}
-            label={showActivedData ? 'Actived' : 'Deleted'}
-          />
-        </Grid>
+        
       </Grid>
 
       <MuiDataGrid
-        getData={buyerService.getBuyerList}
+        getData={buyer2Service.getBuyerList}
         showLoading={buyerState.isLoading}
         isPagingServer={true}
         headerHeight={45}
