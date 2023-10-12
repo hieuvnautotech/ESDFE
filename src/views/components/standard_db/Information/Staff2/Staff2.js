@@ -187,49 +187,49 @@ const Staff2 = (props) => {
     },
     {
       field: 'StaffCode',
-      headerName: intl.formatMessage({ id: 'buyer.BuyerCode' }),
+      headerName: intl.formatMessage({ id: 'staff.StaffCode' }),
       width: 150,
     },
     {
       field: 'StaffName',
-      headerName: intl.formatMessage({ id: 'buyer.BuyerName' }),
+      headerName: intl.formatMessage({ id: 'staff.StaffName' }),
       width: 250,
     },
-    // {
-    //   field: 'BrandName',
-    //   headerName: intl.formatMessage({ id: 'buyer.BrandName' }),
-    //   width: 200,
-    // },
-    // {
-    //   field: 'Website',
-    //   headerName: intl.formatMessage({ id: 'buyer.Website' }),
-    //   width: 200,
-    // },
-    // {
-    //   field: 'PhoneNumber',
-    //   headerName: intl.formatMessage({ id: 'buyer.PhoneNumber' }),
-    //   width: 150,
-    // },
-    // {
-    //   field: 'Email',
-    //   headerName: intl.formatMessage({ id: 'buyer.Email' }),
-    //   width: 200,
-    // },
-    // {
-    //   field: 'Fax',
-    //   headerName: intl.formatMessage({ id: 'buyer.Fax' }),
-    //   width: 130,
-    // },
-    // {
-    //   field: 'Tax',
-    //   headerName: intl.formatMessage({ id: 'buyer.Tax' }),
-    //   width: 130,
-    // },
-    // {
-    //   field: 'Address',
-    //   headerName: intl.formatMessage({ id: 'buyer.Address' }),
-    //   width: 250,
-    // },
+    {
+      field: 'DeptCode',
+      headerName: intl.formatMessage({ id: 'staff.DepartmentCode' }),
+      width: 200,
+    },
+    {
+      field: 'DeptNameVI',
+      headerName: intl.formatMessage({ id: 'staff.DepartmentNameVI' }),
+      width: 200,
+    },
+    {
+      field: 'DeptNameEN',
+      headerName: intl.formatMessage({ id: 'staff.DepartmentNameEN' }),
+      width: 150,
+    },
+    {
+      field: 'createdName',
+      headerName: intl.formatMessage({ id: 'User Create' }),
+      width: 200,
+    },
+    {
+      field: 'createdDate',
+      headerName: intl.formatMessage({ id: 'general.created_date' }),
+      width: 130,
+    },
+    {
+      field: 'modifiedName',
+      headerName: intl.formatMessage({ id: 'User Update' }),
+      width: 130,
+    },
+    {
+      field: 'modifiedDate',
+      headerName: intl.formatMessage({ id: 'general.modified_date' }),
+      width: 250,
+    },
     // {
     //   field: 'DateSignContract',
     //   headerName: intl.formatMessage({ id: 'buyer.DateSignContract' }),
@@ -282,18 +282,18 @@ const Staff2 = (props) => {
         <Grid item xs>
           <MuiSearchField
             label="general.code"
-            name="BuyerCode"
+            name="StaffCode"
             onClick={fetchData}
-            onChange={(e) => changeSearchData(e, 'BuyerCode')}
+            onChange={(e) => changeSearchData(e, 'StaffCode')}
           />
         </Grid>
 
         <Grid item xs>
           <MuiSearchField
             label="general.name"
-            name="BuyerName"
+            name="StaffName"
             onClick={fetchData}
-            onChange={(e) => changeSearchData(e, 'BuyerName')}
+            onChange={(e) => changeSearchData(e, 'StaffName')}
           />
         </Grid>
 
