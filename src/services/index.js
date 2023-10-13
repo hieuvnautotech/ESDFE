@@ -76,6 +76,7 @@ import * as SlitReceivingService from './Slit/SlitReceivingService';
 import * as KPIEffectiveService from './KPI/KPIEffectiveService';
 import * as KIPQCIQCService from './KPI/KPIQCIQCService';
 import * as KPIQCService from './KPI/KPIQCService';
+import * as buyer2Service from './Standard/Information/Buyer2Service';
 
 export {
   SelectOptionService,
@@ -148,6 +149,7 @@ export {
   KIPQCIQCService,
   SplitSizeService,
   KPIQCService,
+  buyer2Service,
   //QMS - HOLDING
   HoldRawMaterialService,
   HoldMaterialService,

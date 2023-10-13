@@ -1,5 +1,5 @@
 import { axios } from '@utils';
-const apiBuyer = '/api/buyer';
+const apiBuyer = '/api/buyer2';
 const getBuyerList = async (params) => {
   try {
     return await axios.get(`${apiBuyer}/get-all`, {
