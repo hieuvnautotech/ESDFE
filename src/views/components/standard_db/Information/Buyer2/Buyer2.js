@@ -36,6 +36,11 @@ const Buyer2 = (props) => {
   });
 
   
+  const handleAdd = () => {
+    setMode(CREATE_ACTION);
+    setRowData();
+    toggle();
+  };
 
   
 
@@ -235,7 +240,7 @@ const Buyer2 = (props) => {
     <React.Fragment>
       <Grid container spacing={2} direction="row" justifyContent="space-between" alignItems="flex-end">
         <Grid item xs={5}>
-          {/* <MuiButton text="create" color="success" onClick={handleAdd} /> */}
+          <MuiButton text="create" color="success" onClick={handleAdd} />
         </Grid>
 
         
