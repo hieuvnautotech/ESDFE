@@ -95,7 +95,7 @@ const Buyer2 = (props) => {
       } else {
         newArr = [{ ...updateData, isNew: true }, ...newArr];
         if (newArr.length > buyerState.pageSize) {
-          data.pop();
+          newArr.pop();
         }
       }
 

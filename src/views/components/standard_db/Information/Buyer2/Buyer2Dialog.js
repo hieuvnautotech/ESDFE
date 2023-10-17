@@ -1,7 +1,7 @@
 import { CREATE_ACTION, UPDATE_ACTION } from '@constants/ConfigConstants';
 import { MuiDateField, MuiDialog, MuiResetButton, MuiSubmitButton } from '@controls';
 import { Grid, TextField } from '@mui/material';
-import { buyerService } from '@services';
+import { buyer2Service } from '@services';
 import { ErrorAlert, SuccessAlert } from '@utils';
 import { useFormik } from 'formik';
 import React, { useState } from 'react';
@@ -29,7 +29,7 @@ const Buyer2Dialog = ({ initModal, isOpen, onClose, setUpdateData, mode }) => {
 
   const onSubmit = async (data) => {
     setDialogState({ isSubmit: true });
-    const res = mode == CREATE_ACTION ? await buyerService.createBuyer(data) : await buyerService.modifyBuyer(data);
+    const res = mode == CREATE_ACTION ? await buyer2Service.createBuyer(data) : await buyer2Service.modifyBuyer(data);
     if (res.HttpResponseCode === 200 && res.Data) {
       SuccessAlert(intl.formatMessage({ id: res.ResponseMessage }));
       setUpdateData(res.Data);
@@ -65,7 +65,7 @@ const Buyer2Dialog = ({ initModal, isOpen, onClose, setUpdateData, mode }) => {
                   autoFocus
                   fullWidth
                   size="small"
-                  disabled={true}
+                  disabled={false}
                   label={intl.formatMessage({ id: 'buyer.BuyerCode' }) + ' *'}
                   name="BuyerCode"
                   value={values.BuyerCode}
@@ -78,7 +78,7 @@ const Buyer2Dialog = ({ initModal, isOpen, onClose, setUpdateData, mode }) => {
                 <TextField
                   fullWidth
                   size="small"
-                  disabled={true}
+                  disabled={false}
                   label={intl.formatMessage({ id: 'buyer.BuyerName' }) + ' *'}
                   name="BuyerName"
                   value={values.BuyerName}
