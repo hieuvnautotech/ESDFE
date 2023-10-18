@@ -42,7 +42,11 @@ const Buyer2 = (props) => {
     toggle();
   };
 
-  
+  const handleUpdate = async (row) => {
+    setMode(UPDATE_ACTION);
+    setRowData(row);
+    toggle();
+  };
 
   
 
