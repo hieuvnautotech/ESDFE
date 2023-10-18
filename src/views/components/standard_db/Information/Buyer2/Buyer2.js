@@ -49,6 +49,7 @@ const Buyer2 = (props) => {
   };
 
   
+  
 
   async function fetchData() {
     setbuyerState({
@@ -75,7 +76,37 @@ const Buyer2 = (props) => {
   }
 
   
+  const handleDeleteBuyer = async (buyer) => {
+    if (
+      window.confirm(
+        intl.formatMessage({
+          id: showActivedData ? 'general.confirm_delete' : 'general.confirm_redo_deleted',
+        })
+      )
+    ) {
+      try {
+        let res = await buyer2Service.deleteBuyer(buyer);
+        if (res && res.HttpResponseCode === 200) {
+          SuccessAlert(intl.formatMessage({ id: 'general.success' }));
+          await fetchData();
+        } else {
+          ErrorAlert(intl.formatMessage({ id: res.ResponseMessage }));
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  };
 
+  const handleshowActivedData = async (event) => {
+    setShowActivedData(event.target.checked);
+    if (!event.target.checked) {
+      setbuyerState({
+        ...buyerState,
+        page: 1,
+      });
+    }
+  };
   
 
   useEffect(() => {
@@ -138,7 +169,7 @@ const Buyer2 = (props) => {
                 <EditIcon fontSize="inherit" />
               </IconButton>
             </Grid>
-            {/* <Grid item xs={6}>
+            <Grid item xs={6}>
               <IconButton
                 aria-label="delete"
                 color="error"
@@ -148,7 +179,7 @@ const Buyer2 = (props) => {
               >
                 {showActivedData ? <DeleteIcon fontSize="inherit" /> : <UndoIcon fontSize="inherit" />}
               </IconButton>
-            </Grid> */}
+            </Grid>
           </Grid>
         );
       },
