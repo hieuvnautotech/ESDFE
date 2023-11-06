@@ -34,6 +34,7 @@ import Location from './standard_db/Information/Location/Location';
 import Routing from './standard_db/Information/Routing/Routing';
 import Staff2 from './standard_db/Information/Staff2/Staff2';
 import Buyer2 from './standard_db/Information/Buyer2/Buyer2';
+import IOT from './standard_db/Information/IOT/IOT';
 
 // WMS - Material
 import IQCReceiving from './WMS/Material/IQCReceiving/IQCReceiving';
@@ -144,6 +145,7 @@ export {
   SplitMergeMaterial,
   Staff2,
   Buyer2,
+  IOT,
   //QMS
   StandardQC,
   QCMaster,
